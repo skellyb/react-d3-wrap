@@ -1,5 +1,3 @@
-# React component wrapper for D3 elements
-
 ## ALPHA - This may change substantially, still sorting out the details.
 
 ### Usage
@@ -17,7 +15,7 @@ React.render(<D3Wrap
   } } />, document.getElementById('chart'))
 ```
 
-Defining a custom component is simple:
+#### Defining a custom component:
 ```
 import { D3Component } from 'react-d3-wrap'
 
