@@ -3,7 +3,6 @@ const assign = require('lodash.assign')
 
 class D3Component {
   constructor (data, node, options = {}) {
-
     // override defaults
     const opts = assign({
       margin: {

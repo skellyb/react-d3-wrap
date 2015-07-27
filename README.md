@@ -1,5 +1,10 @@
 ## ALPHA - This may change substantially, still sorting out the details.
 
+### Install
+```
+npm install react-d3-wrap
+```
+
 ### Usage
 ```
 import D3Wrap from 'react-d3-wrap'
@@ -19,7 +24,7 @@ React.render(<D3Wrap
 ```
 import { D3Component } from 'react-d3-wrap'
 
-class MyChart extends D3Component {
+export default class MyChart extends D3Component {
   update (data) {
     // d3 implementation here
   }
@@ -29,4 +34,3 @@ class MyChart extends D3Component {
   }
 }
 ```
-
