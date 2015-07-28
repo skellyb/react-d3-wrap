@@ -1,5 +1,3 @@
-## ALPHA - This may change substantially, still sorting out the details.
-
 ### Install
 ```
 npm install react-d3-wrap
