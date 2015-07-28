@@ -1,19 +1,23 @@
-var React = require('react')
-var d3 = require('d3')
-var assign = require('lodash.assign')
+import React from 'react'
+import d3 from 'd3'
+import assign from 'lodash.assign'
 
 export default class ReactD3 extends React.Component {
 
+  update (svg, data, options) {}
+
+  destroy () {}
+
   componentDidMount () {
-    this._d3Element = this._initD3(this.props.data, React.findDOMNode(this), this.props.options)
+    this.update(React.findDOMNode(this), this.props.data, this._getOptions(this.props.options))
   }
 
   componentDidUpdate () {
-    this._update(this.props.data)
+    this.update(React.findDOMNode(this), this.props.data, this._getOptions(this.props.options))
   }
 
   componentWillUnmount () {
-    this._destroy()
+    this.destroy()
   }
 
   render () {
@@ -22,11 +26,12 @@ export default class ReactD3 extends React.Component {
       classes = classes.concat(' ', this.props.className)
     }
 
-    return React.DOM.div({ className: classes })
+    return <svg className={ classes } width={ this.props.width } height={ this.props.height } />
   }
 
-  _initD3 (data, node, options) {
-    var opts = assign({
+  _getOptions (propOps) {
+    const options = (typeof propOps === 'undefined') ? {} : propOps
+    return assign({
       margin: {
         top: 0,
         bottom: 0,
@@ -34,34 +39,14 @@ export default class ReactD3 extends React.Component {
         right: 0
       },
       xaxis: { orientation: 'bottom' },
-      yaxis: { orientation: 'left' },
-      width: 800,
-      height: 600
-    }, options || {})
-
-    this.height = opts.height - (opts.margin.top + opts.margin.bottom)
-    this.width = opts.width - (opts.margin.right + opts.margin.left)
-    this.xAxis = d3.svg.axis().orient(opts.xaxis.orientation)
-    this.yAxis = d3.svg.axis().orient(opts.yaxis.orientation)
-
-    var d3El = d3.select(node).append('svg')
-      .attr('width', this.width + opts.margin.left + opts.margin.right)
-      .attr('height', this.height + opts.margin.top + opts.margin.bottom)
-      .append('g')
-      .attr('transform', 'translate(' + opts.margin.left + ',' + opts.margin.top + ')')
-
-    // first render
-    this._update(data)
-
-    return d3El
+      yaxis: { orientation: 'left' }
+    }, options)
   }
-
-  _update (data) {}
-
-  _destroy () {}
 }
 
 ReactD3.propTypes = {
   data: React.PropTypes.array.isRequired,
+  width: React.PropTypes.number.isRequired,
+  height: React.PropTypes.number.isRequired,
   options: React.PropTypes.object
 }
