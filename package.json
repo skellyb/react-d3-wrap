@@ -1,6 +1,6 @@
 {
   "name": "react-d3-wrap",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "React component wrapper for d3 elements.",
   "main": "lib/index.js",
   "scripts": {
