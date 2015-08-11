@@ -4,11 +4,15 @@ npm install react-d3-wrap
 ```
 
 ### Define a D3 component
-Extend the wrapper then override `update` to implement your D3 graphics. Optionally, if you have cleanup to do, override `destroy`
+Extend the wrapper then override `update` to implement your D3 graphics. Optionally, if you have setup or cleanup to do, override `initialize` or `destroy`.
 ```
 import D3Wrap from 'react-d3-wrap'
 
 export default class MyChart extends D3Wrap {
+  initialize (svg, data, options) {
+    // Optional initialize method called once when component mounts
+  }
+
   update (svg, data, options) {
     // setup container, root svg element passed in along with data and options
     const chart = d3.select(svg)
