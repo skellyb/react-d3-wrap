@@ -4,14 +4,14 @@ import assign from 'lodash.assign'
 
 export default class ReactD3 extends React.Component {
 
-  initilialize (svg, data, options) {}
+  initialize (svg, data, options) {}
 
   update (svg, data, options) {}
 
   destroy () {}
 
   componentDidMount () {
-    this.initilialize(React.findDOMNode(this), this.props.data, this._getOptions(this.props.options))
+    this.initialize(React.findDOMNode(this), this.props.data, this._getOptions(this.props.options))
     this.update(React.findDOMNode(this), this.props.data, this._getOptions(this.props.options))
   }
 
