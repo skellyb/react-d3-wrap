@@ -22,7 +22,7 @@ export default class MyChart extends D3Wrap {
     // continue you d3 implementation as usual...
   }
 
-  destroy {
+  destroy () {
     // clean up...
   }
 }
