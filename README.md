@@ -5,7 +5,7 @@ npm install react-d3-wrap
 
 ### Define a D3 component
 Extend the wrapper then override `update` to implement your D3 graphics. Optionally, if you have setup or cleanup to do, override `initialize` or `destroy`.
-```
+```js
 import D3Wrap from 'react-d3-wrap'
 
 export default class MyChart extends D3Wrap {
@@ -22,14 +22,14 @@ export default class MyChart extends D3Wrap {
     // continue you d3 implementation as usual...
   }
 
-  destroy {
+  destroy () {
     // clean up...
   }
 }
 ```
 
 ### Usage
-```
+```js
 import MyChart from './MyChart'
 
 // Use options to pass in configuration and callbacks
@@ -41,7 +41,7 @@ React.render(<MyChart
 ```
 
 #### Default options
-```
+```js
 {
   margin: {
     top: 0,
