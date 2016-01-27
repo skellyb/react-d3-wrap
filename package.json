@@ -1,88 +1,36 @@
 {
-  "_args": [
-    [
-      "react-d3-wrap@1.1.0",
-      "/Users/Dan/Desktop/Sweet_Repos/dealer-insights"
-    ]
-  ],
-  "_from": "react-d3-wrap@1.1.0",
-  "_id": "react-d3-wrap@1.1.0",
-  "_inCache": true,
-  "_installable": true,
-  "_location": "/react-d3-wrap",
-  "_nodeVersion": "0.10.32",
-  "_npmUser": {
-    "email": "skellyb@gmail.com",
-    "name": "skellyb"
-  },
-  "_npmVersion": "2.1.4",
-  "_phantomChildren": {
-    "envify": "3.4.0"
-  },
-  "_requested": {
-    "name": "react-d3-wrap",
-    "raw": "react-d3-wrap@1.1.0",
-    "rawSpec": "1.1.0",
-    "scope": null,
-    "spec": "1.1.0",
-    "type": "version"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/react-d3-wrap/-/react-d3-wrap-1.1.0.tgz",
-  "_shasum": "d8d675761eba7659658cb8141a079f4d770e5afe",
-  "_shrinkwrap": null,
-  "_spec": "react-d3-wrap@1.1.0",
-  "_where": "/Users/Dan/Desktop/Sweet_Repos/dealer-insights",
-  "author": {
-    "name": "Shawn Kelly"
-  },
-  "bugs": {
-    "url": "https://github.com/skellyb/react-d3-wrap/issues"
-  },
-  "dependencies": {
-    "d3": "^3.5.6",
-    "lodash.assign": "^3.2.0",
-    "react": "0.14.6",
-    "react-dom": "0.14.6"
-  },
-  "description": "React component wrapper for d3 elements.",
-  "devDependencies": {
-    "babel": "^5.8.9"
-  },
-  "directories": {},
-  "dist": {
-    "shasum": "d8d675761eba7659658cb8141a079f4d770e5afe",
-    "tarball": "http://registry.npmjs.org/react-d3-wrap/-/react-d3-wrap-1.1.0.tgz"
-  },
-  "gitHead": "8cd16680a54c0effcff8975f56f095ba4233d312",
-  "homepage": "https://github.com/skellyb/react-d3-wrap",
-  "keywords": [
-    "D3",
-    "React",
-    "charts",
-    "graphs",
-    "wrapper"
-  ],
-  "license": "MIT",
-  "main": "lib/index.js",
-  "maintainers": [
-    {
-      "name": "skellyb",
-      "email": "skellyb@gmail.com"
-    }
-  ],
   "name": "react-d3-wrap",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/skellyb/react-d3-wrap.git"
-  },
+  "version": "1.1.0",
+  "description": "React component wrapper for d3 elements.",
+  "main": "lib/index.js",
   "scripts": {
     "build": "babel -d lib/ src/",
     "prepublish": "npm run build"
   },
-  "version": "1.1.0"
+  "keywords": [
+    "React",
+    "D3",
+    "charts",
+    "graphs",
+    "wrapper"
+  ],
+  "author": "Shawn Kelly",
+  "license": "MIT",
+  "dependencies": {
+    "d3": "^3.5.6",
+    "lodash.assign": "^3.2.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  },
+  "devDependencies": {
+    "babel": "^5.8.9"
+  },
+  "homepage": "https://github.com/skellyb/react-d3-wrap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skellyb/react-d3-wrap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/skellyb/react-d3-wrap/issues"
+  }
 }
