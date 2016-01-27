@@ -8,7 +8,7 @@ Extend the wrapper then override `update` to implement your D3 graphics. Optiona
 ```js
 import D3Wrap from 'react-d3-wrap'
 
-export default class MyChart extends D3Wrap {
+export default D3Wrap({
   initialize (svg, data, options) {
     // Optional initialize method called once when component mounts
   }
@@ -25,7 +25,7 @@ export default class MyChart extends D3Wrap {
   destroy () {
     // clean up...
   }
-}
+})
 ```
 
 ### Usage
@@ -33,7 +33,7 @@ export default class MyChart extends D3Wrap {
 import MyChart from './MyChart'
 
 // Use options to pass in configuration and callbacks
-React.render(<MyChart 
+React.render(<MyChart
   data={ [0, 1, 2] }
   width='400'
   height='300'
