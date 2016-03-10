@@ -7,7 +7,7 @@ npm install react-d3-wrap --save
 
 ### Define a D3 component
 `d3Wrap()` returns a React component that sets up a svg element and hooks `initialize()`, `update()` and `destroy()` functions into component lifecycle.
-```
+```javascript
 import d3Wrap from 'react-d3-wrap'
 
 const MyChart = d3Wrap({
@@ -34,12 +34,12 @@ export default MyChart
 
 ### How to use your custom D3 component
 `data`, `width` and `height` are required props. Use options to pass configuration and callbacks into initialize and update methods.
-```
+```javascript
 <MyChart data={ [0, 1, 2] } width='400' height='300' options={ {color: '#ff0000'} } />
 ```
 
 #### Default options
-```js
+```javascript
 {
   margin: {
     top: 0,
