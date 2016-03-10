@@ -1,17 +1,19 @@
+**V2 is a higher-ordered component, improving compatibility with React 0.14+**
+
 ### Install
 ```
-npm install react-d3-wrap
+npm install react-d3-wrap --save
 ```
 
 ### Define a D3 component
-Extend the wrapper then override `update` to implement your D3 graphics. Optionally, if you have setup or cleanup to do, override `initialize` or `destroy`.
-```js
-import D3Wrap from 'react-d3-wrap'
+`d3Wrap()` returns a React component that sets up a svg element and hooks `initialize()`, `update()` and `destroy()` functions into component lifecycle.
+```
+import d3Wrap from 'react-d3-wrap'
 
-export default class MyChart extends D3Wrap {
+const MyChart = d3Wrap({
   initialize (svg, data, options) {
     // Optional initialize method called once when component mounts
-  }
+  },
 
   update (svg, data, options) {
     // setup container, root svg element passed in along with data and options
@@ -19,25 +21,21 @@ export default class MyChart extends D3Wrap {
       .append('g')
       .attr('transform', `translate(${options.margin.left}, ${options.margin.top})`)
 
-    // continue you d3 implementation as usual...
-  }
+    // continue your d3 implementation as usual...
+  },
 
   destroy () {
-    // clean up...
+    // Optional clean up when a component is being unmounted...
   }
-}
+})
+
+export default MyChart
 ```
 
-### Usage
-```js
-import MyChart from './MyChart'
-
-// Use options to pass in configuration and callbacks
-React.render(<MyChart 
-  data={ [0, 1, 2] }
-  width='400'
-  height='300'
-  options={{ onClick: this.handleClick }} />, document.getElementById('chart'))
+### How to use your custom D3 component
+`data`, `width` and `height` are required props. Use options to pass configuration and callbacks into initialize and update methods.
+```
+<MyChart data={ [0, 1, 2] } width='400' height='300' options={ {color: '#ff0000'} } />
 ```
 
 #### Default options
