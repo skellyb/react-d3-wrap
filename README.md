@@ -1,4 +1,4 @@
-**V2 is a higher-ordered component, improving compatibility with React 0.14+**
+**V2 is a higher-order component, improving compatibility with React 0.14+**
 
 ### Install
 ```
