@@ -18,8 +18,8 @@
   "license": "MIT",
   "peerDependencies": {
     "d3": "^3.5",
-    "react": "^0.14",
-    "react-dom": "^0.14"
+    "react": "^0.14.0 || ^15.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
