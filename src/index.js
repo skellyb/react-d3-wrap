@@ -2,26 +2,25 @@ import React, { Component } from 'react'
 import { findDOMNode } from 'react-dom'
 import d3 from 'd3'
 
-export default function d3Wrap (lifecycle) {
-  const d3Lifecycle = {
+export default function d3Wrap (methods) {
+  const defaultMethods = {
     initialize (svg, data, options) {},
     update (svg, data, options) {},
-    destroy () {},
-    ...lifecycle
+    destroy () {}
   }
 
   class D3Wrap extends Component {
     componentDidMount () {
-      d3Lifecycle.initialize.call(this, findDOMNode(this), this.props.data, this._getOptions(this.props.options))
-      d3Lifecycle.update.call(this, findDOMNode(this), this.props.data, this._getOptions(this.props.options))
+      this.initialize.call(this, findDOMNode(this), this.props.data, this._getOptions(this.props.options))
+      this.update.call(this, findDOMNode(this), this.props.data, this._getOptions(this.props.options))
     }
 
     componentDidUpdate () {
-      d3Lifecycle.update.call(this, findDOMNode(this), this.props.data, this._getOptions(this.props.options))
+      this.update.call(this, findDOMNode(this), this.props.data, this._getOptions(this.props.options))
     }
 
     componentWillUnmount () {
-      d3Lifecycle.destroy.call(this, )
+      this.destroy.call(this, )
     }
 
     _getOptions (propOps) {
@@ -55,5 +54,5 @@ export default function d3Wrap (lifecycle) {
     options: React.PropTypes.object
   }
 
-  return D3Wrap
+  return Object.assign(D3Wrap.prototype, defaultMethods, methods)
 }
