@@ -48,7 +48,10 @@ export default function d3Wrap (methods) {
   }
 
   D3Wrap.propTypes = {
-    data: React.PropTypes.array.isRequired,
+    data: React.PropTypes.oneOfType([
+      React.PropTypes.array,
+      React.PropTypes.object
+    ]).isRequired,
     width: React.PropTypes.number.isRequired,
     height: React.PropTypes.number.isRequired,
     options: React.PropTypes.object
