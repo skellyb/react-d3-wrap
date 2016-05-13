@@ -54,5 +54,7 @@ export default function d3Wrap (methods) {
     options: React.PropTypes.object
   }
 
-  return Object.assign(D3Wrap.prototype, defaultMethods, methods)
+  Object.assign(D3Wrap.prototype, defaultMethods, methods)
+
+  return D3Wrap
 }
