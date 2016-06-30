@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { findDOMNode } from 'react-dom'
-import d3 from 'd3'
 
 export default function d3Wrap (methods) {
   const defaultMethods = {
