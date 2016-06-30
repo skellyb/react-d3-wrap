@@ -17,7 +17,6 @@
   "author": "Shawn Kelly",
   "license": "MIT",
   "peerDependencies": {
-    "d3": "^3.5",
     "react": "^0.14.0 || ^15.0.0",
     "react-dom": "^0.14.0 || ^15.0.0"
   },
