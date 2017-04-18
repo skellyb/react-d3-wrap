@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { findDOMNode } from 'react-dom'
+import PropTypes from 'prop-types'
 
 export default function d3Wrap (methods) {
   const defaultMethods = {
@@ -47,13 +48,13 @@ export default function d3Wrap (methods) {
   }
 
   D3Wrap.propTypes = {
-    data: React.PropTypes.oneOfType([
-      React.PropTypes.array,
-      React.PropTypes.object
+    data: PropTypes.oneOfType([
+      PropTypes.array,
+      PropTypes.object
     ]).isRequired,
-    width: React.PropTypes.number.isRequired,
-    height: React.PropTypes.number.isRequired,
-    options: React.PropTypes.object
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    options: PropTypes.object
   }
 
   Object.assign(D3Wrap.prototype, defaultMethods, methods)
