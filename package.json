@@ -1,6 +1,6 @@
 {
   "name": "react-d3-wrap",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "React component wrapper for d3 elements.",
   "main": "lib/index.js",
   "scripts": {
@@ -18,8 +18,8 @@
   "license": "MIT",
   "peerDependencies": {
     "prop-types": "^15.5.0",
-    "react": "^0.14.0 || ^15.0.0",
-    "react-dom": "^0.14.0 || ^15.0.0"
+    "react": "^15.5.0",
+    "react-dom": "^15.5.0"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",

@@ -1,5 +1,3 @@
-**V2 is a higher-order component, improving compatibility with React 0.14+**
-
 ### Install
 ```
 npm install react-d3-wrap --save
